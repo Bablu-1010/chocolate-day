@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Chocolate Day</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #222;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .wrap {
+            position: relative;
+            height: 350px;
+            width: 210px;
+            overflow: hidden;
+            animation: float 3s ease-in-out infinite;
+            margin: 20px auto;
+        }
+
+        .choc {
+            position: absolute;
+            left: 5px;
+            top: 0;
+            height: 300px;
+            width: 200px;
+            background: chocolate;
+            box-shadow: inset -5px -5px rgba(0, 0, 0, 0.2), 
+                        inset 5px 5px rgba(200, 200, 200, 0.2);
+        }
+
+        .bite {
+            position: absolute;
+            border-radius: 50%;
+            background: #222;
+            z-index: 8;
+            animation: bite 3s linear infinite;
+        }
+
+        .bite-1 {
+            top: -10px;
+            right: -10px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .bite-2 {
+            top: -15px;
+            right: 30px;
+            height: 30px;
+            width: 30px;
+        }
+
+        .block {
+            margin: 10px;
+            margin-top: 5px;
+            height: 35px;
+            width: 35px;
+            position: relative;
+            z-index: 6;
+            border: 10px solid #4a3525;
+            border-top-color: rgba(200, 200, 200, 0.4);
+            border-left-color: rgba(200, 200, 200, 0.2);
+            border-bottom-color: rgba(0, 0, 0, 0.2);
+            border-right-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .wrapper {
+            position: absolute;
+            height: 200px;
+            width: 100%;
+            background: rgb(243, 42, 42);
+            box-shadow: inset -5px -5px rgba(0, 0, 0, 0.4);
+            top: 150px;
+            overflow: hidden;
+            left: 0;
+            z-index: 8;
+        }
+
+        .wrapper:before {
+            content: "Happy\aChocolate Day";
+            white-space: pre;
+            position: absolute;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            top: 50%;
+            width: 160%;
+            left: -25%;
+            transform: rotate(-45deg) translateY(-50%);
+            background: rgb(240, 194, 45);
+            box-shadow: inset -5px -5px 0 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: calc(16px + 1vw);
+            padding: 10px;
+            color: #4a3525;
+            font-weight: bold;
+        }
+
+        .title {
+            color: white;
+            text-align: center;
+            font-size: calc(24px + 2vw);
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes bite {
+            0%, 49% {
+                transform: scale(0);
+            }
+            50%, 74% {
+                transform: scale(1.25);
+            }
+            75%, 100% {
+                transform: scale(1.5);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .wrap {
+                transform: scale(0.8);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wrap {
+                transform: scale(0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="choc"></div>
+        <div class="bite bite-1"></div>
+        <div class="bite bite-2"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="wrapper"></div>
+    </div>
+    <h1 class="title">Happy Chocolate Day! 🍫</h1>
+</body>
+</html>
